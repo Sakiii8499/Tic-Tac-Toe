@@ -5,12 +5,63 @@
     font-family: 'Poppins', sans-serif;
 }
 
+:root{
+    --primary-color: #fff;
+    --secondary-color: #56baed;
+    --tertiary-color: black;
+    --fourth-color: #fff;
+    --fifth-color: #56baed;
+    --sixth-color: #56baed;
+}
+
 html{
     font-size: 62.5%;
 }
 
 body{
-    background: #56baed;
+    background: var(--secondary-color);
+}
+
+.dark-theme{
+    --primary-color: #30363d;
+    --secondary-color: #0d1117;
+    --tertiary-color: #fff;
+    --fourth-color: #fff;
+    --fifth-color: #fff;
+    --sixth-color: #fff;
+}
+
+.toggle-btn{
+    position: absolute;
+    width: 4.8rem;
+    height: 2.4rem;
+    right: 2rem;
+    top: 2rem;
+    border: 0.2rem solid;
+    border-radius: 2rem;
+    border-color: var(--primary-color);
+    background: var(--primary-color);
+}
+
+.toggle-btn .inner-circle{
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    left: 0.1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    background: var(--secondary-color);
+    transition: all 0.4s ease;
+}
+
+.toggle-btn.active{
+    background: #0d1117;
+    border-color: #0d1117;
+}
+
+.toggle-btn.active .inner-circle{
+    margin-left: 50%;
+    background: #4a525c;
 }
 
 .select-box, .play-board, .result-box{
@@ -26,11 +77,12 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: #fff;
+    background: var(--primary-color);
     padding: 2rem 2.5rem 2.5rem;
     border-radius: 0.5rem;
     max-width: 33rem;
     width: 100%;
+    color: var(--tertiary-color);
 }
 
 .select-box.hide{
@@ -63,9 +115,9 @@ body{
     font-weight: 500;
     padding: 0.8rem 0;
     border: none;
-    background: #56baed;
+    background: var(--secondary-color);
     border-radius: 0.5rem;
-    color: #fff;
+    color: var(--primary-color);
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -76,10 +128,12 @@ body{
 
 .options button.playerX{
     margin-right: 0.5rem;
+    color: var(--fourth-color);
 }
 
 .options button.playerO{
     margin-left: 0.5rem;
+    color: var(--fourth-color);
 }
 
 .play-board{
@@ -95,7 +149,7 @@ body{
 }
 
 .play-board .details{
-    background: #fff;
+    background: var(--primary-color);
     padding: 0.7rem;
     border-radius: 0.5rem;
 }
@@ -109,7 +163,7 @@ body{
 
 .play-board .details span{
     width: 100%;
-    color: #56baed;
+    color: var(--sixth-color);
     border-radius: 0.5rem;
     padding: 0.7rem 0;
     font-size: 1.9rem;
@@ -123,7 +177,7 @@ body{
 }
 
 .details span:first-child{
-    color: #fff;
+    color: var(--fourth-color);
 }
 
 .details .slider{
@@ -132,18 +186,18 @@ body{
     left: 0;
     height: 100%;
     width: 50%;
-    background: #56baed;
+    background: var(--secondary-color);
     border-radius: 0.5rem;
     z-index: 2;
     transition: all 0.3s ease;
 }
 
 .players.active span:first-child{
-    color:  #56baed;
+    color:  var(--sixth-color);
 }
 
 .players.active span:nth-child(2){
-    color:  #fff;
+    color:  var(--fourth-color);
 }
 .players.active .slider{
     left: 50%;
@@ -162,16 +216,16 @@ body{
     margin:0.2rem;
     height: 8rem;
     width: 8rem;
-    background: #fff;
+    background: var(--primary-color);
     border-radius: 0.5rem;
     font-size: 4rem;
     text-align: center;
     line-height: 8rem;
-    color: #56baed;
+    color: var(--fifth-color);
 }
 
 .result-box{
-    background: #fff;
+    background: var(--primary-color);
     padding: 2rem;
     font-weight: bold;
     border-radius: 5px;
@@ -190,6 +244,7 @@ body{
 
 .result-box .won-text{
     font-size: 2.5rem;
+    color: var(--tertiary-color);
     font-weight: bold;
     display: flex;
     justify-content: center;
@@ -212,10 +267,26 @@ body{
     font-size: 1.8rem;
     font-weight: 500;
     padding: 0.8rem 2rem;
+    color: var(--fourth-color);
     border: none;
-    background: #56baed;
+    background: var(--secondary-color);
     border-radius: 0.5rem;
-    color: #fff;
     cursor: pointer;
     transition: all 0.3s ease;
 }
+
+/*@media(prefers-color-scheme: dark){
+
+    
+    .select-box .title{
+        font-weight: unset;
+    }
+    
+    .players.active span:first-child{
+        color:  #fff;
+    }
+    .play-board .details span, .play-board section span{
+        color:  #fff;
+    }
+    
+}*/

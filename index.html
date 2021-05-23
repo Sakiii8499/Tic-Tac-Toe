@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" oncontextmenu="return false">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +11,18 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <title>Tic-Tac-Toe</title>
 </head>
+
 <body>
+
+    <!--Dark mode button-->
+    <div class="container">
+      
+            <div class="toggle-btn" id="icon"  onclick="this.classList.toggle('active')"> <!--note this-->
+                <div class="inner-circle"></div>
+            </div>
+       
+    </div>
+
     <!--select-box section-->
     <div class="select-box">
         <header>Tic Tac Toe</header>
@@ -22,7 +34,7 @@
             </div>
         </div>
     </div>
-
+    <!--oncontextmenu="return false"-->
     <!--Playboard section-->
     <div class="play-board">
         <div class="details">
@@ -59,6 +71,14 @@
         </div>
     </div>
 
+    <script>
+        var icon = document.getElementById("icon");
+        icon.onclick = function(){
+            document.body.classList.toggle("dark-theme");
+        }
+    </script>
+
     <script src="script.js"></script>
 </body>
+
 </html>
