@@ -55,13 +55,13 @@ body{
 }
 
 .toggle-btn.active{
-    background: #0d1117;
+    background: var(--primary-color);
     border-color: #0d1117;
 }
 
 .toggle-btn.active .inner-circle{
     margin-left: 50%;
-    background: #4a525c;
+    background: #fff;
 }
 
 .select-box, .play-board, .result-box{
